@@ -195,9 +195,9 @@
 						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<div class="single_product_thumbnails">
 								<ul>
-									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
-									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
-									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
+									<li><img src="{{data.image1.url}}" alt="" data-image="images/single_1.jpg"></li>
+									<li class="active"><img src="{{data.image2.url}}" alt="" data-image="images/single_2.jpg"></li>
+									<li><img src="{{data.image3.url}}" alt="" data-image="images/single_3.jpg"></li>
 								</ul>
 							</div>
 						</div>
@@ -212,14 +212,14 @@
 			<div class="col-lg-5">
 				<div class="product_details">
 					<div class="product_details_title">
-						<h2>Pocket cotton sweatshirt</h2>
-						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+						<h2>{{data.brand}}</h2>
+						<p>{{data.name}}</p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 						<span class="ti-truck"></span><span>free delivery</span>
 					</div>
-					<div class="original_price">$629.99</div>
-					<div class="product_price">$495.00</div>
+					<!-- <div class="original_price">$629.99</div> -->
+					<div class="product_price">₹ {{data.price}}</div>
 					<ul class="star_rating">
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -227,14 +227,14 @@
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 					</ul>
-					<div class="product_color">
+					<!-- <div class="product_color">
 						<span>Select Color:</span>
 						<ul>
 							<li style="background: #e54e5d"></li>
 							<li style="background: #252525"></li>
 							<li style="background: #60b3f3"></li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 						<span>Quantity:</span>
 						<div class="quantity_selector">

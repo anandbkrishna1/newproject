@@ -10,10 +10,18 @@ from .models import Watches
 # Create your views here.
 def home(request):
     content=Watches.objects.all()
-    
+    d=User.objects.all()
     data={
         'result':content,
-        
+        'user1':d
         
     }
     return render(request,'index.html',data)
+
+def details(request,id):
+    product=Watches.objects.get(pk=id)
+    print(product)
+    data={
+        'data':product
+    }
+    return render(request,'single.html',data)
