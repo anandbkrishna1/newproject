@@ -39,7 +39,7 @@
 
 									<!-- Currency / Language / My Account -->
 
-									<li class="currency">
+									<!-- <li class="currency">
 										<a href="#">
 											usd
 											<i class="fa fa-angle-down"></i>
@@ -62,7 +62,7 @@
 											<li><a href="#">German</a></li>
 											<li><a href="#">Spanish</a></li>
 										</ul>
-									</li>
+									</li> -->
 									<li class="account">
 										<a href="#">
 											My Account
@@ -98,7 +98,7 @@
 									<li><a href="#">promotion</a></li>
 									<li><a href="#">pages</a></li>
 									<li><a href="#">blog</a></li>
-									<li><a href="contact.html">contact</a></li>
+									<li><a href="{% url 'contact' %}">contact</a></li>
 								</ul>
 								<ul class="navbar_user">
 									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -160,12 +160,12 @@
 							<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 						</ul>
 					</li>
-					<li class="menu_item"><a href="#">home</a></li>
+					<li class="menu_item"><a href="{% url 'home' %}">home</a></li>
 					<li class="menu_item"><a href="#">shop</a></li>
 					<li class="menu_item"><a href="#">promotion</a></li>
 					<li class="menu_item"><a href="#">pages</a></li>
 					<li class="menu_item"><a href="#">blog</a></li>
-					<li class="menu_item"><a href="#">contact</a></li>
+					<li class="menu_item"><a href="{% url 'contact' %}">contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -201,7 +201,7 @@
 					<div class="col-md-4">
 						<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
 							<div class="banner_category">
-								<a href="categories.html">accessories's</a>
+								<a href="categories.html">Collections</a>
 							</div>
 						</div>
 					</div>
@@ -255,7 +255,7 @@
 
 							{% for i in result %}
 							
-								<div class="product-item men">
+								<div class="product-item">
 									<div class="product discount product_filter">
 										<div class="product_image">
 											<img src="{{i.image1.url}}" alt="hggyjgdjhj">

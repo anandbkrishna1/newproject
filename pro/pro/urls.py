@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('details/<int:id>/', views.details, name="details"),
+    path('contact/', views.contact, name="contact"),
 
 ]
 if settings.DEBUG:

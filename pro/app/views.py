@@ -25,3 +25,5 @@ def details(request,id):
         'data':product
     }
     return render(request,'single.html',data)
+def contact(request):
+    return render(request,'contact.html')
