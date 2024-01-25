@@ -69,10 +69,22 @@
 											<i class="fa fa-angle-down"></i>
 										</a>
 										<ul class="account_selection">
-											<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a>
+											<li><a href="{% url 'user_login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a>
 											</li>
-											<li><a href="#"><i class="fa fa-user-plus"
+											<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus"
 														aria-hidden="true"></i>Register</a></li>
+											<li>
+											
+												{% if user.is_authenticated %}
+												<h1>{{user}}</h1>
+												{% else %}
+												<h3>visitor</h3>
+												{% endif %} 
+											</li>   
+											<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+											</li>
+
+
 										</ul>
 									</li>
 								</ul>
