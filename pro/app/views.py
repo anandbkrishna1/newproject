@@ -59,7 +59,7 @@ def user_login (request):
             messages.info(request,'user not exists')
             print('user no exist')
             return redirect(user_login)
-    return render(request,'signup.html')
+    return render(request,'login.html')
 
 
 

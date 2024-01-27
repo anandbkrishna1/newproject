@@ -73,16 +73,19 @@
 											</li>
 											<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus"
 														aria-hidden="true"></i>Register</a></li>
-											<li>
+											
 											
 												{% if user.is_authenticated %}
-												<h1>{{user}}</h1>
+												<li><a href="#">{{user}}</a>
+												</li>
+												<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+												</li>
 												{% else %}
-												<h3>visitor</h3>
+												<li><a href="#">Guest</a>
+												</li>
 												{% endif %} 
-											</li>   
-											<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
-											</li>
+											  
+											
 
 
 										</ul>
@@ -184,15 +187,15 @@
 
 		<!-- Slider -->
 
-		<div class="main_slider" style="background-image:url(images/slider_1.jpg)">
+		<div class="main_slider" style="background-image:url(static/images/795912.webp)">
 			<div class="container fill_height">
 				<div class="row align-items-center fill_height">
 					<div class="col">
-						<div class="main_slider_content">
+						<!-- <div class="main_slider_content">
 							<h6>Spring / Summer Collection 2017</h6>
 							<h1>Get up to 30% Off New Arrivals</h1>
 							<div class="red_button shop_now_button"><a href="#">shop now</a></div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -204,21 +207,21 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="banner_item align-items-center" style="background-image:url(images/banner_1.jpg)">
+						<div class="banner_item align-items-center" style="background-image:url(static/images/ladies-watch.webp)">
 							<div class="banner_category">
 								<a href="categories.html">women's</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
+						<div class="banner_item align-items-center" style="background-image:url(static/images/collection.webp)">
 							<div class="banner_category">
 								<a href="categories.html">Collections</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="banner_item align-items-center" style="background-image:url(images/banner_3.jpg)">
+						<div class="banner_item align-items-center" style="background-image:url(static/images/watchwallpaper-omega.webp)">
 							<div class="banner_category">
 								<a href="categories.html">men's</a>
 							</div>
