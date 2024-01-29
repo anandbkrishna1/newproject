@@ -72,6 +72,15 @@
 									<ul class="account_selection">
 										<li><a href="{% url 'user_login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
 										<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										{% if user.is_authenticated %}
+										<li><a href="#">{{user}}</a>
+										</li>
+										<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+										</li>
+										{% else %}
+										<li><a href="#">Guest</a>
+										</li>
+										{% endif %} 
 									</ul>
 								</li>
 							</ul>
@@ -103,7 +112,7 @@
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 								<li class="checkout">
-									<a href="#">
+									<a href="{% url 'view_cart' %}">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<span id="checkout_items" class="checkout_items">2</span>
 									</a>
@@ -128,7 +137,7 @@
 		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 		<div class="hamburger_menu_content text-right">
 			<ul class="menu_top_nav">
-				<li class="menu_item has-children">
+				{% comment %} <li class="menu_item has-children">
 					<a href="#">
 						usd
 						<i class="fa fa-angle-down"></i>
@@ -151,23 +160,32 @@
 						<li><a href="#">German</a></li>
 						<li><a href="#">Spanish</a></li>
 					</ul>
-				</li>
+				</li> {% endcomment %}
 				<li class="menu_item has-children">
 					<a href="#">
 						My Account
 						<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="menu_selection">
-						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+						<li><a href="{% url 'user_login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+						{% if user.is_authenticated %}
+						<li><a href="#">{{user}}</a>
+						</li>
+						<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+						</li>
+						{% else %}
+						<li><a href="#">Guest</a>
+						</li>
+						{% endif %} 
 					</ul>
 				</li>
-				<li class="menu_item"><a href="#">home</a></li>
+				<li class="menu_item"><a href="{% url 'home' %}">home</a></li>
 				<li class="menu_item"><a href="#">shop</a></li>
 				<li class="menu_item"><a href="#">promotion</a></li>
 				<li class="menu_item"><a href="#">pages</a></li>
 				<li class="menu_item"><a href="#">blog</a></li>
-				<li class="menu_item"><a href="#">contact</a></li>
+				<li class="menu_item"><a href="{% url 'contact' %}">contact</a></li>
 			</ul>
 		</div>
 	</div>
@@ -178,12 +196,12 @@
 
 				<!-- Breadcrumbs -->
 
-				<div class="breadcrumbs d-flex flex-row align-items-center">
+				{% comment %} <div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
 					</ul>
-				</div>
+				</div> {% endcomment %}
 
 			</div>
 		</div>

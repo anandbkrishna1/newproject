@@ -87,12 +87,29 @@ def remove_from_cart(request, item_id):
 
 def men(request):
     content=Watches.objects.all()
-    
     data={
         'result':content,
         
     }
     return render(request,'men.html',data)
+
+def women(request):
+    content=Watches.objects.all()
+    data={
+        'result':content,
+        
+    }
+    return render(request,'women.html',data)
+
+def collection(request):
+    content=Watches.objects.all()
+    data={
+        'result':content,
+        
+    }
+    return render(request,'collection.html',data)
+
+
 
 
 

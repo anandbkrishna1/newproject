@@ -41,7 +41,7 @@
 
 								<!-- Currency / Language / My Account -->
 
-								<li class="currency">
+								{% comment %} <li class="currency">
 									<a href="#">
 										usd
 										<i class="fa fa-angle-down"></i>
@@ -64,7 +64,7 @@
 										<li><a href="#">German</a></li>
 										<li><a href="#">Spanish</a></li>
 									</ul>
-								</li>
+								</li> {% endcomment %}
 								<li class="account">
 									<a href="#">
 										My Account
@@ -73,6 +73,15 @@
 									<ul class="account_selection">
 										<li><a href="{% url 'user_login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
 										<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										{% if user.is_authenticated %}
+										<li><a href="#">{{user}}</a>
+										</li>
+										<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+										</li>
+										{% else %}
+										<li><a href="#">Guest</a>
+										</li>
+										{% endif %} 
 									</ul>
 								</li>
 							</ul>
@@ -159,8 +168,17 @@
 						<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="menu_selection">
-						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+						<li><a href="{% url 'user_login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+						{% if user.is_authenticated %}
+						<li><a href="#">{{user}}</a>
+						</li>
+						<li><a href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+						</li>
+						{% else %}
+						<li><a href="#">Guest</a>
+						</li>
+						{% endif %} 
 					</ul>
 				</li>
 				<li class="menu_item"><a href="{% url 'contact' %}">home</a></li>
