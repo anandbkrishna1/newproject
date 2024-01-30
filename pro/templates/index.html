@@ -119,7 +119,7 @@
 									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 									<li class="checkout">
-										<a href="#">
+										<a href="{% url 'view_cart' %}">
 											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 											<span id="checkout_items" class="checkout_items">2</span>
 										</a>
@@ -141,30 +141,7 @@
 			<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 			<div class="hamburger_menu_content text-right">
 				<ul class="menu_top_nav">
-					<li class="menu_item has-children">
-						<a href="#">
-							usd
-							<i class="fa fa-angle-down"></i>
-						</a>
-						<ul class="menu_selection">
-							<li><a href="#">cad</a></li>
-							<li><a href="#">aud</a></li>
-							<li><a href="#">eur</a></li>
-							<li><a href="#">gbp</a></li>
-						</ul>
-					</li>
-					<li class="menu_item has-children">
-						<a href="#">
-							English
-							<i class="fa fa-angle-down"></i>
-						</a>
-						<ul class="menu_selection">
-							<li><a href="#">French</a></li>
-							<li><a href="#">Italian</a></li>
-							<li><a href="#">German</a></li>
-							<li><a href="#">Spanish</a></li>
-						</ul>
-					</li>
+					
 					<li class="menu_item has-children">
 						<a href="#">
 							My Account
@@ -223,7 +200,7 @@
 					<div class="col-md-4">
 						<div class="banner_item align-items-center" style="background-image:url(static/images/watchwallpaper-omega.webp)">
 							<div class="banner_category">
-								<a href="categories.html">men's</a>
+								<a href="{% url 'men' %}">men's</a>
 							</div>
 						</div>
 					</div>
@@ -242,22 +219,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row align-items-center">
-					<div class="col text-center">
-						<div class="new_arrivals_sorting">
-							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked"
-									data-filter="*">all</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
-									data-filter=".women">women's</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
-									data-filter=".accessories">accessories</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
-									data-filter=".men">men's</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				
 				
 				<div class="row">
 					
@@ -269,7 +231,7 @@
 
 
 							{% for i in result %}
-							
+							  {% if i.id <= 10 %}
 								<div class="product-item">
 									<div class="product discount product_filter">
 										<div class="product_image">
@@ -285,9 +247,9 @@
 											<div class="product_price">₹ {{i.price}}</div>
 										</div>
 									</div>
-									<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+									
 								</div>
-								
+								{% endif %}
 							{% endfor %}
 
 						</div>
